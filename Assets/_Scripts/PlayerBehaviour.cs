@@ -111,7 +111,7 @@ public class PlayerBehaviour : MonoBehaviour
                     }
 
 
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.RUN);
+                    m_animator.SetInteger("AnimState", 1);
                 }
                 else if (joystick.Horizontal < -joystickHorizontalSensitivity)
                 {
@@ -127,11 +127,11 @@ public class PlayerBehaviour : MonoBehaviour
                         m_rigidBody2D.AddForce(Vector2.down * horizontalForce * 0.5f * Time.deltaTime);
                     }
 
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.RUN);
+                    m_animator.SetInteger("AnimState",1);
                 }
                 else
                 {
-                    m_animator.SetInteger("AnimState", (int)PlayerAnimationType.IDLE);
+                    m_animator.SetInteger("AnimState", 0);
                 }
             }
 
@@ -139,7 +139,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 // jump
                 m_rigidBody2D.AddForce(Vector2.up * verticalForce);
-                m_animator.SetInteger("AnimState", (int) PlayerAnimationType.JUMP);
+                m_animator.SetInteger("AnimState", 3);
                 isJumping = true;
             }
             else
@@ -149,7 +149,7 @@ public class PlayerBehaviour : MonoBehaviour
 
             if ((joystick.Vertical < -joystickVerticalSensitivity) && (!isCrouching))
             {
-                m_animator.SetInteger("AnimState", (int)PlayerAnimationType.CROUCH);
+                m_animator.SetInteger("AnimState", 0);
                 isCrouching = true;
             }
             else
