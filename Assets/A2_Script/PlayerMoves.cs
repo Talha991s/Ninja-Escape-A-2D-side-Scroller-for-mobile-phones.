@@ -104,6 +104,22 @@ public class PlayerMoves : MonoBehaviour
         // respawn
         if (other.gameObject.CompareTag("DeathPlane"))
         {
+            LifeManager.health -= 1;
+            transform.position = spawnPoint.position;
+        }
+
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            //transform.position = spawnPoint.position;
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Alien"))
+        {
+            LifeManager.health -= 1;
             transform.position = spawnPoint.position;
         }
     }

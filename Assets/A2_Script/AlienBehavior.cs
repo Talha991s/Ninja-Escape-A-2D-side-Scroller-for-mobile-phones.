@@ -9,23 +9,65 @@ public class AlienBehavior : MonoBehaviour
     public bool isGroundedAhead;
     public Transform lookaheadpoint;
     public LayerMask collisionGroundLayer;
-  //  public LayerMask collisionWallLayer;
-   // public Transform lookinfront;
+    public LOS alienlos;
+    //  public LayerMask collisionWallLayer;
+    // public Transform lookinfront;
 
-
+    //[Header("Bullet Firing")]
+    //public float fireDelay;
+    //public Transform BulletSpawn;
+    //public GameObject player;
+    //public PlayerBehaviour player;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+       // player = GameObject.FindObjectOfType<GameObject>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (_hasLOS())
+        {
+           //_FireBullet();
+            Debug.Log("SEE PLAYER");
+        }
+
+
         //_LookInFront();
         _LookAhead();
         _Move();
     }
+
+    //private void _FireBullet()
+    //{
+    //    if (Time.frameCount % fireDelay == 0 && BulletManager.Instance().HasBullets())
+    //    {
+    //        Debug.Log("mmmmmmmmmmmm");
+
+    //        var playerPosition = player.transform.position;
+
+    //        var firingDirection = Vector3.Normalize(playerPosition - BulletSpawn.position);
+
+    //        BulletManager.Instance().GetBullet(BulletSpawn.position, firingDirection);
+    //    }
+    //}
+
+    private bool _hasLOS()
+    {
+        if (alienlos.collidep.Count > 0)
+        {
+            if (alienlos.Collidewithp.gameObject.CompareTag("Player") && alienlos.collidep[0].gameObject.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 
     //private void _LookInFront()
     //{

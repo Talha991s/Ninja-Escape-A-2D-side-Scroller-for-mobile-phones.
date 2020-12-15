@@ -54,6 +54,7 @@ public class OpossumBehaviour : MonoBehaviour
         //delay bullet firing
         if (Time.frameCount % fireDelay == 0 && BulletManager.Instance().HasBullets())
         {
+            Debug.Log("Trying");
             var playerPosition= player.transform.position;
 
             var firingDirection = Vector3.Normalize( playerPosition - BulletSpawn.position);

@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 8142933913386669739}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 863ce8224a33dfa469c25ce1172dd7b4, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalSpeed: 4
-  verticalBoundary: 50
+  verticalBoundary: 500
   damage: 0
   contactFilter:
     useTriggers: 1

@@ -11,6 +11,8 @@ TagManager:
   - Opossum
   - Enemy
   - Bullet
+  - Alien
+  - Coin
   layers:
   - Default
   - TransparentFX
