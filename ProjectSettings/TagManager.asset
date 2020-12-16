@@ -13,6 +13,8 @@ TagManager:
   - Bullet
   - Alien
   - Coin
+  - MovingPlatform
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - Player
   - Bullet
   - AI
-  - 
+  - MovingPlatform
   - 
   - 
   - 
